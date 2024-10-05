@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Stone-100: hsl(30, 54%, 90%);
+  --Stone-150: hsl(30, 18%, 87%);
+  --Stone-600: hsl(30, 10%, 34%);
+  --Stone-900: hsl(24, 5%, 18%);
+  --Brown-800: hsl(14, 45%, 36%);
+  --Rose-800: hsl(332, 51%, 32%);
+  --Rose-50: hsl(330, 100%, 98%);
+}
+@font-face {
+  font-family: "young-serif";
+  src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "outfit";
+  src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format("truetype");
+}
+.young {
+  font-family: "young-serif";
+  font-weight: normal;
+  font-style: normal;
+}
+.outfit {
+  font-family: "outfit";
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: var(--Rose-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block {
+  display: block;
+}
+section::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: var(--Stone-150);
+}
+.card {
+  width: 55vw;
+  background-color: var(--White);
+  padding: 3%;
+  border-radius: 6px;
+  margin: 8vh 0;
+}
+.card ul {
+  padding: 15px 25px;
+}
+.card ul li {
+  margin-bottom: 8px;
+  padding-left: 10px;
+  color: var(--Stone-600);
+}
+.card > img {
+  width: 100%;
+  border-radius: 6px;
+}
+.card > h1 {
+  color: var(--Stone-900);
+  margin: 10px 0;
+}
+.card > p {
+  color: var(--Stone-600);
+  margin-bottom: 5%;
+}
+.card .time {
+  background-color: var(--Rose-50);
+  padding-top: 15px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.card .time > h3 {
+  color: var(--Rose-800);
+}
+.card .time > ul li::marker {
+  color: var(--Rose-800);
+}
+.card .ingredients h2 {
+  color: var(--Brown-800);
+}
+.card .ingredients ul li::marker {
+  color: var(--Brown-800);
+}
+.card .instructions h2 {
+  color: var(--Brown-800);
+}
+.card .instructions ul li {
+  counter-increment: item;
+}
+.card .instructions ul li::marker {
+  content: counter(item) ".";
+  color: var(--Brown-800);
+  font-weight: bold;
+}
+.card .nutrition h2 {
+  color: var(--Brown-800);
+}
+.card .nutrition p {
+  margin: 15px 0;
+  color: var(--Stone-600);
+}
+.card .nutrition .data div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: var(--Stone-600);
+}
+.card .nutrition .data div:not(:last-child) {
+  border-bottom: 1px solid var(--Stone-150);
+}
+.card .nutrition .data div span:last-child {
+  padding-right: 20%;
+  color: var(--Brown-800);
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .card {
+    width: 100vw;
+    margin: 0;
+  }
+}
